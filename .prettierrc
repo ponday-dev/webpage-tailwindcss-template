@@ -1,0 +1,27 @@
+{
+  "printWidth": 120,
+  "trailingComma": "es5",
+  "tabWidth": 4,
+  "semi": true,
+  "singleQuote": true,
+  "bracketSpacing": true,
+  "overrides": [
+    {
+      "files": [
+        "src/**/*.html",
+        "src/**/*.css",
+        "src/**/*.scss",
+        "webpack.config.js",
+        ".babelrc",
+        ".prettierrc",
+        ".eslintrc.json",
+        ".stylelintrc.json",
+        ".dependabot/config.yml",
+        "package.json"
+      ],
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "webpage-tailwind-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:html": "ts-node --project build/tsconfig.json ./build/ejs.ts",
+    "dev:style": "ts-node --project build/tsconfig.json ./build/postcss.ts",
+    "dev:assets": "ts-node --project build/tsconfig.json ./build/assets.ts",
+    "watch:html": "npm run dev:html && chokidar \"src/**/*.ejs\" -c \"npm run dev:html\"",
+    "watch:style": "npm run dev:style && chokidar \"src/**/*.css\" -c \"npm run dev:style\"",
+    "watch:assets": "npm run dev:assets",
+    "build:html": "NODE_ENV=production npm run dev:html",
+    "build:style": "NODE_ENV=production npm run dev:style",
+    "build:assets": "NODE_ENV=production ts-node --project build/tsconfig.json ./build/assets.ts",
+    "clean": "rimraf dist",
+    "serve": "browser-sync start --server --serveStatic 'dist' --files 'dist' --index \"./dist/index.html\" --port 5000",
+    "start": "run-p watch:* serve",
+    "build": "run-p build:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/ejs": "^3.0.5",
+    "@types/html-minifier-terser": "^5.1.1",
+    "@types/node": "^14.14.22",
+    "autoprefixer": "^10.2.3",
+    "browser-sync": "^2.26.13",
+    "chokidar-cli": "^2.1.0",
+    "cssnano": "^4.1.10",
+    "ejs": "^3.1.5",
+    "html-minifier-terser": "^5.1.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.4",
+    "postcss-cli": "^8.3.1",
+    "postcss-import": "^14.0.0",
+    "postcss-nested": "^5.0.3",
+    "prettier": "^2.2.1",
+    "prettier-stylelint": "^0.4.2",
+    "rimraf": "^3.0.2",
+    "stylelint": "^13.9.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0",
+    "tailwindcss": "^2.0.2",
+    "ts-node": "^9.1.1"
+  },
+  "dependencies": {
+    "typescript": "^4.1.3"
+  }
+}
